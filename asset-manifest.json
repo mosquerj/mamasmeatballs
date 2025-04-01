@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/mamasmeatballs/static/css/main.cb279272.css",
+    "main.js": "/mamasmeatballs/static/js/main.f5db5a4d.js",
+    "index.html": "/mamasmeatballs/index.html",
+    "main.cb279272.css.map": "/mamasmeatballs/static/css/main.cb279272.css.map",
+    "main.f5db5a4d.js.map": "/mamasmeatballs/static/js/main.f5db5a4d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.cb279272.css",
+    "static/js/main.f5db5a4d.js"
+  ]
+}
