@@ -1,0 +1,58 @@
+/* Global Styles */
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif, -apple-system, BlinkMacSystemFont, 
+    'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 
+    'Fira Sans', 'Droid Sans', 'Helvetica Neue';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #F5F5DC; /* Beige background for recipe site */
+  color: #333; /* Dark gray text for better readability */
+  line-height: 1.6;
+}
+
+/* Code blocks (keep for any potential code displays) */
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+  background-color: #f4f4f4;
+  padding: 2px 4px;
+  border-radius: 3px;
+}
+
+/* Added Global Styles for your recipe site */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Responsive base */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Accessibility improvements */
+:focus {
+  outline: 2px solid #008C45; /* Green outline matching your theme */
+  outline-offset: 2px;
+}
+
+/* Print styles */
+@media print {
+  body {
+    background-color: white;
+    color: black;
+    font-size: 12pt;
+  }
+  
+  nav, footer {
+    display: none;
+  }
+}
