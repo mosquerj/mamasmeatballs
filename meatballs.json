@@ -1,7 +1,7 @@
 [
   {
     "_id": 1,
-    "img_name": "pictures/classic.jpg",
+    "img_name": "classic.jpg",
     "name": "Classic Meatballs",
     "description": "Juicy and flavorful, these classic meatballs are perfect for pasta or subs.",
     "ingredients": ["1 lb ground beef", "1/2 cup breadcrumbs", "1 egg", "1/4 cup parsley", "Salt and pepper to taste"],
@@ -9,7 +9,7 @@
   },
   {
     "_id": 2,
-    "img_name": "pictures/spicy.jpg",
+    "img_name": "spicy.jpg",
     "name": "Spicy Meatballs",
     "description": "Add a kick to your meal with these spicy meatballs, made with chili and garlic.",
     "ingredients": ["1 lb ground beef", "1/2 cup breadcrumbs", "1 egg", "1/4 cup parsley", "1 tsp chili flakes", "2 cloves garlic"],
@@ -17,7 +17,7 @@
   },
   {
     "_id": 3,
-    "img_name": "pictures/veggie.jpg",
+    "img_name": "veggie.jpg",
     "name": "Veggie Meatballs",
     "description": "A vegetarian twist on the classic, made with chickpeas and fresh herbs.",
     "ingredients": ["1 can chickpeas", "1/2 cup breadcrumbs", "1 egg", "1/4 cup parsley", "1/4 cup cilantro", "Salt and pepper to taste"],
@@ -25,7 +25,7 @@
   },
   {
     "_id": 4,
-    "img_name": "pictures/swedish.jpg",
+    "img_name": "swedish.jpg",
     "name": "Swedish Meatballs",
     "description": "Soft and tender meatballs served with a creamy gravy and lingonberry sauce.",
     "ingredients": ["1 lb ground beef", "1/2 cup breadcrumbs", "1 egg", "1/4 cup parsley", "1/4 tsp nutmeg", "1/4 tsp allspice"],
@@ -33,7 +33,7 @@
   },
   {
     "_id": 5,
-    "img_name": "pictures/bbq.jpg",
+    "img_name": "bbq.jpg",
     "name": "BBQ Meatballs",
     "description": "Sweet and tangy BBQ-glazed meatballs, perfect for parties and gatherings.",
     "ingredients": ["1 lb ground beef", "1/2 cup breadcrumbs", "1 egg", "1/4 cup parsley", "1 cup BBQ sauce"],
@@ -41,7 +41,7 @@
   },
   {
     "_id": 6,
-    "img_name": "pictures/cheesy.jpg",
+    "img_name": "cheesy.jpg",
     "name": "Cheesy Meatballs",
     "description": "Stuffed with gooey mozzarella, these meatballs are a cheese lover's dream.",
     "ingredients": ["1 lb ground beef", "1/2 cup breadcrumbs", "1 egg", "1/4 cup parsley", "1/2 cup mozzarella cheese"],
@@ -49,7 +49,7 @@
   },
   {
     "_id": 7,
-    "img_name": "pictures/teriyaki.jpg",
+    "img_name": "teriyaki.jpg",
     "name": "Teriyaki Meatballs",
     "description": "Sweet and savory teriyaki-glazed meatballs, perfect for an Asian-inspired meal.",
     "ingredients": ["1 lb ground beef", "1/2 cup breadcrumbs", "1 egg", "1/4 cup parsley", "1/2 cup teriyaki sauce"],
@@ -57,7 +57,7 @@
   },
   {
     "_id": 8,
-    "img_name": "pictures/buffalo.jpg",
+    "img_name": "buffalo.jpg",
     "name": "Buffalo Meatballs",
     "description": "Spicy buffalo sauce-coated meatballs, perfect for game day.",
     "ingredients": ["1 lb ground beef", "1/2 cup breadcrumbs", "1 egg", "1/4 cup parsley", "1/2 cup buffalo sauce"],
