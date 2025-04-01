@@ -1,0 +1,25 @@
+.recipe-preview {
+  padding: 1rem;
+}
+
+.recipe-preview img {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+  display: block;
+  margin: 1rem auto;
+}
+
+.recipe-preview ul,
+.recipe-preview ol {
+  padding-left: 20px;
+  margin: 1rem 0;
+}
+
+@media (max-width: 480px) {
+  .recipe-preview img {
+    width: 100%;
+    height: auto;
+  }
+}
