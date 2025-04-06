@@ -1,29 +1,36 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import './RecipePreview.css';
 
 function RecipePreview() {
   const { id } = useParams();
-  
-  // Temporary data - will be replaced with JSON fetch later
-  const recipe = {
-    _id: id,
-    img_name: "/pictures/classic.jpg",
-    name: "Classic Meatballs",
-    description: "Juicy and flavorful, these classic meatballs are perfect for pasta or subs.",
-    ingredients: [
-      "1 lb ground beef",
-      "1/2 cup breadcrumbs",
-      "1 egg",
-      "1/4 cup parsley",
-      "Salt and pepper to taste"
-    ],
-    instructions: [
-      "Mix all ingredients in a bowl.",
-      "Form into meatballs.",
-      "Bake at 375°F for 20 minutes."
-    ]
-  };
+  const [recipe, setRecipe] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const apiUrl = process.env.REACT_APP_API_URL || 'https://meatballserver.onrender.com';
+    fetch(`${apiUrl}/recipes/${id}`)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Failed to fetch recipe');
+        }
+        return response.json();
+      })
+      .then(data => {
+        setRecipe(data);
+        setLoading(false);
+      })
+      .catch(err => {
+        console.error('Error fetching recipe:', err);
+        setError(err.message);
+        setLoading(false);
+      });
+  }, [id]);
+
+  if (loading) return <p>Loading recipe...</p>;
+  if (error) return <p>Error: {error}</p>;
+  if (!recipe) return <p>No recipe found.</p>;
 
   return (
     <div className="recipe-preview">
