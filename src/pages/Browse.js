@@ -1,47 +1,34 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import RecipeCard from '../components/RecipeCard';
 import './Browse.css';
 
 function Browse() {
-  // Temporary hardcoded data - will be replaced with JSON fetch later
-  const recipes = [
-    {
-      _id: 1,
-      img_name: "/pictures/classic.jpg",
-      name: "Classic Meatballs",
-      description: "Juicy and flavorful classic meatballs"
-    },
-    {
-      _id: 2,
-      img_name: "/pictures/spicy.jpg",
-      name: "Spicy Meatballs",
-      description: "With a kick of chili and garlic"
-    },
-    {
-      _id: 3,
-      img_name: "/pictures/veggie.jpg",
-      name: "Veggie Meatballs",
-      description: "Vegetarian twist on the classic"
-    },
-    {
-      _id: 4,
-      img_name: "/pictures/swedish.jpg",
-      name: "Swedish Meatballs",
-      description: "With creamy gravy and lingonberry"
-    },
-    {
-      _id: 5,
-      img_name: "/pictures/bbq.jpg",
-      name: "BBQ Meatballs",
-      description: "Sweet and tangy BBQ-glazed"
-    },
-    {
-      _id: 6,
-      img_name: "/pictures/cheesy.jpg",
-      name: "Cheesy Meatballs",
-      description: "Stuffed with mozzarella"
-    }
-  ];
+  const [recipes, setRecipes] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const apiUrl = process.env.REACT_APP_API_URL || 'https://meatballserver.onrender.com';
+    fetch(`${apiUrl}/recipes`)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
+      .then(data => {
+        setRecipes(data);
+        setLoading(false);
+      })
+      .catch(err => {
+        console.error('Error fetching recipes:', err);
+        setError(err.message);
+        setLoading(false);
+      });
+  }, []);
+
+  if (loading) return <p>Loading recipes...</p>;
+  if (error) return <p>Error loading recipes: {error}</p>;
 
   return (
     <>
