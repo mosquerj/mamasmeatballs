@@ -61,23 +61,29 @@ function Submit() {
       body: JSON.stringify(newRecipe)
     })
       .then(response => {
+        console.log('Response status:', response.status);
         if (!response.ok) {
-          return response.json().then(err => { throw new Error(err.error || 'Failed to add recipe') });
+          return response.json().then(err => { 
+            console.error('Error response from server:', err);
+            throw new Error(err.error || 'Failed to add recipe')
+          });
         }
         return response.json();
       })
       .then(data => {
+        console.log('Successful submission data:', data);
         setSubmitSuccess('Recipe added successfully!');
-        // Clear the form
+        // Clear the form fields
         setImgName('');
         setName('');
         setDescription('');
         setIngredients('');
         setInstructions('');
-        // Update local recipe list (so the new data is immediately visible)
+        // Update local recipe list
         setRecipes(prevRecipes => [...prevRecipes, data.recipe]);
       })
       .catch(err => {
+        console.error('Submission error:', err);
         setSubmitError(err.message);
       });
   };
@@ -95,7 +101,7 @@ function Submit() {
           type="text" 
           id="img-name" 
           name="img-name" 
-          placeholder="e.g., classic.jpg" 
+          placeholder="e.g., hawaiian.jpg" 
           value={imgName}
           onChange={e => setImgName(e.target.value)}
           required
@@ -106,7 +112,7 @@ function Submit() {
           type="text" 
           id="recipe-name" 
           name="recipe-name" 
-          placeholder="Enter recipe name" 
+          placeholder="Hawaiian Meatballs" 
           value={name}
           onChange={e => setName(e.target.value)}
           required
@@ -116,7 +122,7 @@ function Submit() {
         <textarea 
           id="description" 
           name="description" 
-          placeholder="Add a short description" 
+          placeholder="Tropical twist on classic meatballs with juicy pineapple and tangy teriyaki glaze." 
           value={description}
           onChange={e => setDescription(e.target.value)}
           required
@@ -126,7 +132,7 @@ function Submit() {
         <textarea 
           id="ingredients" 
           name="ingredients" 
-          placeholder="List ingredients"
+          placeholder="1 lb ground beef&#10;1/2 cup breadcrumbs&#10;1 egg&#10;1/4 cup chopped fresh pineapple&#10;2 tbsp teriyaki sauce&#10;2 tbsp chopped green onions&#10;Salt and pepper to taste"
           value={ingredients}
           onChange={e => setIngredients(e.target.value)}
           required
@@ -136,7 +142,7 @@ function Submit() {
         <textarea 
           id="instructions" 
           name="instructions" 
-          placeholder="Provide step-by-step instructions"
+          placeholder="Preheat your oven to 375°F.&#10;Mix all ingredients in a bowl.&#10;Form into meatballs.&#10;Bake for 20-25 minutes.&#10;Drizzle with teriyaki sauce.&#10;Garnish with green onions."
           value={instructions}
           onChange={e => setInstructions(e.target.value)}
           required
