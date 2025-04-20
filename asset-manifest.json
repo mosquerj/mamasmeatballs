@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/mamasmeatballs/static/css/main.cb279272.css",
-    "main.js": "/mamasmeatballs/static/js/main.e46c21ff.js",
+    "main.js": "/mamasmeatballs/static/js/main.3b441053.js",
     "index.html": "/mamasmeatballs/index.html",
     "main.cb279272.css.map": "/mamasmeatballs/static/css/main.cb279272.css.map",
-    "main.e46c21ff.js.map": "/mamasmeatballs/static/js/main.e46c21ff.js.map"
+    "main.3b441053.js.map": "/mamasmeatballs/static/js/main.3b441053.js.map"
   },
   "entrypoints": [
     "static/css/main.cb279272.css",
-    "static/js/main.e46c21ff.js"
+    "static/js/main.3b441053.js"
   ]
 }
